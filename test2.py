@@ -60,7 +60,6 @@ def run_stress_test(input_content: str, port: str, unoserver_pid: int):
                 status = "KO"
 
             print(f"[{i}] Conversion {status} in {duration} seconds [Memory: {mem_usage} KB]", file=sys.stderr)
-            # TSV output (now includes memory usage)
             print(f"{i}\t{start_str}\t{status}\t{duration}\t{mem_usage}")
 
         except subprocess.CalledProcessError as e:
@@ -68,7 +67,6 @@ def run_stress_test(input_content: str, port: str, unoserver_pid: int):
             mem_usage = get_unoserver_memory(unoserver_pid)
             print(f"[{i}] Conversion FAILED in {duration} seconds [Memory: {mem_usage} KB]", file=sys.stderr)
             print(f"stderr: {e.stderr.decode('utf-8')}", file=sys.stderr)
-            # TSV output with KO status (now includes memory usage)
             print(f"{i}\t{start_str}\tKO\t{duration}\t{mem_usage}")
 
 
