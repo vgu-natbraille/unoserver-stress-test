@@ -8,7 +8,7 @@ ps -aef | grep -e "--port 2010 --uno-port 2011"
 
 # start stress test
 
-python test2.py UNOSERVER_PID > log.txt
+`python test2.py UNOSERVER_PID > log.txt`
 
 log.txt format:
 
