@@ -1,8 +1,10 @@
 # start unoserver
-unoserver --port 2010 --uno-port 2011
+
+`unoserver --port 2010 --uno-port 2011`
 
 # get unoserver pid (not soffice pid !)
-ps -aef | grep -e "--port 2010 --uno-port 2011"
+
+`ps -aef | grep -e "--port 2010 --uno-port 2011"`
 
 -> UNOSERVER_PID
 
